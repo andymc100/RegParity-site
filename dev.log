@@ -1,0 +1,20 @@
+
+> curved-cloud@0.0.1 dev
+> astro dev
+
+20:20:08 [types] Generated 1ms
+20:20:08 [content] Syncing content
+20:20:08 [content] Synced content
+20:20:08 [vite] Re-optimizing dependencies because vite config has changed
+
+ astro  v5.17.2 ready in 253 ms
+
+┃ Local    http://localhost:4321/
+┃ Network  use --host to expose
+
+20:20:08 watching for file changes...
+20:20:47 [200] / 37ms
+20:20:48 [200] /_image 452ms
+20:20:49 [200] /product 9ms
+20:20:49 [200] /download 12ms
+20:21:15 [200] /contact 7ms

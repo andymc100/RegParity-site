@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Download RegParity | Request Access">
+  <div class="container download-page">
+    <h1>Request RegParity</h1>
+    <p>Share your work email and we’ll send an expiring download link, along with a short getting-started guide.</p>
+
+    <!-- TODO: Replace __FORM_ENDPOINT__ with Formspree/Getform endpoint -->
+    <form action="__FORM_ENDPOINT__" method="POST" class="download-form">
+      <div class="form-group">
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="company">Company *</label>
+        <input type="text" id="company" name="company" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Work Email *</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="it-email">IT Contact Email (optional)</label>
+        <input type="email" id="it-email" name="it_email" />
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message (optional)</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+      </div>
+
+      <button type="submit" class="btn">Request download link</button>
+    </form>
+
+    <p class="note">Note: If your IT team needs to download and scan the application first, we can send the link directly to them.</p>
+  </div>
+</BaseLayout>
+
+<style>
+  .download-page {
+    padding: 4rem 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  p {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    color: #444;
+  }
+  .download-form {
+    background: #fafafa;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+  }
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  input, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+  }
+  button {
+    width: 100%;
+    font-size: 1.125rem;
+  }
+  .note {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+  }
+</style>

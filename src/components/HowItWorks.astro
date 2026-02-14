@@ -1,0 +1,61 @@
+---
+const steps = [
+  "Load TR position files and reconciliation reports",
+  "Review breaks and proposed corrective actions",
+  "Export compliant outbound updates with full audit history"
+];
+---
+<section class="how-it-works">
+  <div class="container">
+    <h2>How it works</h2>
+    <div class="steps-container">
+      {steps.map((step, index) => (
+        <div class="step-item">
+          <span class="step-number">{index + 1}</span>
+          <p>{step}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .how-it-works {
+    padding: 5rem 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+  .steps-container {
+    display: grid;
+    gap: 3rem;
+  }
+  @media (min-width: 768px) {
+    .steps-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .step-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--color-primary);
+    color: var(--color-bg);
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+  p {
+    font-size: 1.125rem;
+    margin: 0;
+  }
+</style>

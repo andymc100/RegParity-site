@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+---
+
+<BaseLayout title="Product | RegParity" description="RegParity aggregates breaks, surfaces actionable corrections, and preserves audit trails for EMIR and SFTR reconciliations.">
+  <div class="container product-page">
+    <section class="section">
+      <h1>The Problem</h1>
+      <p>Reconciliation highlights discrepancies. Correcting them is manual, slow, and opaque.</p>
+    </section>
+
+    <section class="section">
+      <h2>What RegParity Does</h2>
+      <ul>
+        <li>Aggregates breaks</li>
+        <li>Surfaces actionable corrections</li>
+        <li>Preserves audit trail</li>
+        <li>Prepares outbound updates</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Deployment Model</h2>
+      <ul>
+        <li>Windows desktop application</li>
+        <li>Designed for restricted environments</li>
+        <li>No external data transmission</li>
+      </ul>
+    </section>
+  </div>
+  <CTASection />
+</BaseLayout>
+
+<style>
+  .product-page {
+    padding: 4rem 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .section {
+    margin-bottom: 4rem;
+  }
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+  }
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  ul {
+    padding-left: 1.5rem;
+    font-size: 1.25rem;
+    line-height: 1.8;
+  }
+  li {
+    margin-bottom: 0.5rem;
+  }
+  p {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: #444;
+  }
+</style>

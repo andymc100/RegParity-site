@@ -1,0 +1,61 @@
+---
+import { Image } from 'astro:assets';
+import placeholderImg from '../assets/screenshots/placeholder.png';
+---
+<section class="hero">
+  <div class="container hero-container">
+    <div class="hero-content">
+      <h1>Fix EMIR and SFTR reconciliation breaks faster.</h1>
+      <p>RegParity turns reconciliation and valuation breaks into prioritised corrective actions — with a full audit trail and compliant outbound updates.</p>
+      <div class="hero-actions">
+        <a href="/download" class="btn">Request download link</a>
+        <a href="/contact" class="btn btn-secondary">Contact</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <Image src={placeholderImg} alt="Dashboard screenshot placeholder" width={600} style="width: 100%; height: auto;" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding: 5rem 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .hero-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  @media (min-width: 768px) {
+    .hero-container {
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+  }
+  .hero-content h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+  .hero-content p {
+    font-size: 1.25rem;
+    color: #444;
+    margin-bottom: 2.5rem;
+    max-width: 50ch;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .hero-image img {
+    border-radius: 4px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    background: #f0f0f0;
+    border: 1px solid var(--color-border);
+    display: block;
+  }
+</style>

@@ -1,0 +1,53 @@
+---
+const features = [
+  {
+    title: "Prioritised corrective actions",
+    description: "Reconciliation tells you what’s wrong. RegParity shows what to correct next.",
+  },
+  {
+    title: "Full audit trail",
+    description: "Every correction is traceable. Clear provenance from break to outbound update.",
+  },
+  {
+    title: "Designed for real trade volumes",
+    description: "Built to handle large position files and repeatable workflows.",
+  },
+];
+---
+<section class="features">
+  <div class="container features-container">
+    {features.map(feature => (
+      <div class="feature-item">
+        <h3>{feature.title}</h3>
+        <p>{feature.description}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .features {
+    padding: 5rem 0;
+    border-bottom: 1px solid var(--color-border);
+    background-color: #fafafa;
+  }
+  .features-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  @media (min-width: 768px) {
+    .features-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .feature-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+  .feature-item p {
+    color: #666;
+    line-height: 1.5;
+  }
+</style>
