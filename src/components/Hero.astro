@@ -1,61 +1,288 @@
 ---
-import { Image } from 'astro:assets';
-import placeholderImg from '../assets/screenshots/placeholder.png';
 ---
 <section class="hero">
   <div class="container hero-container">
     <div class="hero-content">
       <h1>Fix EMIR and SFTR reconciliation breaks faster.</h1>
       <p>RegParity turns reconciliation and valuation breaks into prioritised corrective actions — with a full audit trail and compliant outbound updates.</p>
+
+      <div class="hero-badges">
+        <span>Restricted environments</span>
+        <span class="separator">•</span>
+        <span>Full audit trail</span>
+        <span class="separator">•</span>
+        <span>Large-file friendly</span>
+        <span class="separator">•</span>
+        <span>Expiring download links</span>
+      </div>
+
       <div class="hero-actions">
-        <a href="/download" class="btn">Request download link</a>
+        <a href="/download" class="btn btn-primary">Request download link</a>
         <a href="/contact" class="btn btn-secondary">Contact</a>
       </div>
     </div>
-    <div class="hero-image">
-      <Image src={placeholderImg} alt="Dashboard screenshot placeholder" width={600} style="width: 100%; height: auto;" />
+
+    <div class="hero-mockup">
+      <div class="mockup-window">
+        <div class="mockup-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="mockup-title">RegParity Dashboard</span>
+        </div>
+        <div class="mockup-body">
+          <div class="mockup-sidebar">
+            <div class="sidebar-item active"></div>
+            <div class="sidebar-item"></div>
+            <div class="sidebar-item"></div>
+          </div>
+          <div class="mockup-content">
+            <div class="stats-row">
+              <div class="stat-card">
+                <span class="stat-label">Breaks found</span>
+                <span class="stat-value error">124</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-label">Actions prepared</span>
+                <span class="stat-value success">37</span>
+              </div>
+            </div>
+            <div class="chart-placeholder">
+              <div class="bar" style="height: 60%"></div>
+              <div class="bar" style="height: 85%"></div>
+              <div class="bar" style="height: 40%"></div>
+              <div class="bar" style="height: 70%"></div>
+              <div class="bar" style="height: 50%"></div>
+            </div>
+            <div class="table-rows">
+              <div class="row"></div>
+              <div class="row"></div>
+              <div class="row"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <style>
   .hero {
-    padding: 5rem 0;
+    padding: 4rem 0 6rem;
     border-bottom: 1px solid var(--color-border);
+    overflow: hidden; /* For any potential glow overflow */
   }
+
   .hero-container {
     display: grid;
     grid-template-columns: 1fr;
     gap: 4rem;
     align-items: center;
   }
-  @media (min-width: 768px) {
+
+  @media (min-width: 900px) {
     .hero-container {
       grid-template-columns: 1.1fr 0.9fr;
     }
   }
+
+  /* Content */
   .hero-content h1 {
     font-size: 3rem;
     line-height: 1.1;
     letter-spacing: -0.02em;
     margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
   }
+
+  /* Subtle gradient underline for accent */
+  .hero-content h1::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    margin-top: 1rem;
+    border-radius: 2px;
+    opacity: 0.8;
+  }
+
   .hero-content p {
     font-size: 1.25rem;
     color: #444;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
     max-width: 50ch;
   }
+
+  /* Badges */
+  .hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+  }
+
+  .separator {
+    color: #ccc;
+  }
+
+  /* Actions */
   .hero-actions {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
   }
-  .hero-image img {
-    border-radius: 4px;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    background: #f0f0f0;
-    border: 1px solid var(--color-border);
-    display: block;
+
+  /* Mockup */
+  .hero-mockup {
+    position: relative;
+    perspective: 1000px;
   }
+
+  .mockup-window {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1), 0 0 0 1px rgba(0,0,0,0.02);
+    overflow: hidden;
+    transform: rotateY(-2deg) rotateX(2deg);
+    transition: transform 0.3s ease;
+  }
+
+  .hero-mockup:hover .mockup-window {
+    transform: rotateY(0) rotateX(0);
+  }
+
+  .mockup-header {
+    background: #f5f5f5;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  .dot.red { background: #ff5f56; }
+  .dot.yellow { background: #ffbd2e; }
+  .dot.green { background: #27c93f; }
+
+  .mockup-title {
+    margin-left: 1rem;
+    font-size: 0.8rem;
+    color: #888;
+    font-family: monospace;
+  }
+
+  .mockup-body {
+    display: flex;
+    height: 320px;
+  }
+
+  .mockup-sidebar {
+    width: 60px;
+    background: #f9f9f9;
+    border-right: 1px solid #eee;
+    padding: 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .sidebar-item {
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    width: 100%;
+  }
+
+  .sidebar-item.active {
+    background: #bbb;
+    width: 70%;
+  }
+
+  .mockup-content {
+    flex: 1;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background: #fff;
+  }
+
+  .stats-row {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .stat-card {
+    flex: 1;
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 1rem;
+    border-radius: 6px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  }
+
+  .stat-label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.05em;
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .stat-value.error { color: #d32f2f; }
+  .stat-value.success { color: #2e7d32; }
+
+  .chart-placeholder {
+    height: 100px;
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+    justify-content: space-around;
+  }
+
+  .bar {
+    width: 12%;
+    background: #eee;
+    border-radius: 4px 4px 0 0;
+  }
+
+  .bar:nth-child(2) { background: #333; } /* Accent */
+
+  .table-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .row {
+    height: 10px;
+    background: #f5f5f5;
+    border-radius: 4px;
+    width: 100%;
+  }
+
+  .row:nth-child(2) { width: 85%; }
+  .row:nth-child(3) { width: 92%; }
 </style>
