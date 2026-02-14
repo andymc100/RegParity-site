@@ -1,0 +1,66 @@
+---
+const features = [
+  {
+    title: "Prioritised corrective actions",
+    description: "See what to correct next — not just what’s wrong.",
+    icon: "bolt"
+  },
+  {
+    title: "Audit trail by default",
+    description: "Trace every change from break → decision → outbound update.",
+    icon: "shield"
+  },
+  {
+    title: "Built for real trade volumes",
+    description: "Designed for large position files and repeatable outcomes.",
+    icon: "server"
+  },
+];
+---
+
+<section class="wrap">
+  <div class="grid">
+    {features.map(feature => (
+      <div class="card">
+        <div class="icon-wrapper">
+          {feature.icon === 'bolt' && (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+          )}
+          {feature.icon === 'shield' && (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          )}
+          {feature.icon === 'server' && (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+          )}
+        </div>
+        <h3>{feature.title}</h3>
+        <p>{feature.description}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  /* Local icon styling */
+  .icon-wrapper {
+    margin-bottom: 16px;
+    color: var(--gold);
+    display: inline-flex;
+    padding: 10px;
+    background: rgba(220,190,109,0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(220,190,109,0.2);
+  }
+
+  /* Card hover effect enhancement */
+  .card:hover .icon-wrapper {
+    background: rgba(220,190,109,0.2);
+    border-color: rgba(220,190,109,0.4);
+    box-shadow: 0 0 15px rgba(220,190,109,0.15);
+  }
+
+  /*
+     Note: .grid, .card, h3, p styles are inherited from global.css
+     to ensure consistency with the design system.
+  */
+</style>
