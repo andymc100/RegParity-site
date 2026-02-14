@@ -12,12 +12,6 @@
     <h1>Fix EMIR and SFTR reconciliation breaks faster.</h1>
     <p>RegParity turns reconciliation and valuation breaks into prioritised corrective actions — with a full audit trail and compliant outbound updates.</p>
 
-    <div class="hero-actions">
-      <a href="/download" class="btn primary">Request download link</a>
-      <!-- Secondary button styled as ghost via base .btn class -->
-      <a href="/contact" class="btn">Contact</a>
-    </div>
-
     <div class="trust-strip">
       <div class="trust-item">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -43,10 +37,16 @@
         <span>Full Audit Trail</span>
       </div>
     </div>
+
+    <div class="hero-actions">
+      <a href="/download" class="btn primary">Request download link</a>
+      <!-- Secondary button styled as ghost via base .btn class -->
+      <a href="/contact" class="btn">Contact</a>
+    </div>
   </div>
 
   <div class="panel hero-mockup">
-    <!-- CSS-Only Mockup optimized for Dark Theme -->
+    <!-- CSS-Only Mockup: Light Theme Internal, Dark Frame -->
     <div class="mockup-header">
       <div class="window-controls">
         <span></span><span></span><span></span>
@@ -55,41 +55,145 @@
     </div>
     <div class="mockup-body">
       <div class="sidebar">
-        <div class="sidebar-row active"></div>
-        <div class="sidebar-row"></div>
-        <div class="sidebar-row"></div>
-        <div class="sidebar-row"></div>
+        <div class="sidebar-icon active"></div>
+        <div class="sidebar-icon"></div>
+        <div class="sidebar-icon"></div>
+        <div class="sidebar-icon"></div>
       </div>
-      <div class="main-view">
-        <div class="stats-grid">
-          <div class="stat-box">
-            <span class="label">Breaks Found</span>
-            <span class="value warning">124</span>
+      <div class="main-view light-theme">
+
+        <!-- Chart 1: Break Resolution (Baseline vs Projected) -->
+        <div class="chart-card full-width">
+          <div class="chart-header">
+            <h3>Break Resolution Forecast</h3>
+            <div class="legend">
+              <div class="legend-item"><span class="dot baseline"></span> Baseline</div>
+              <div class="legend-item"><span class="dot projected"></span> Projected</div>
+            </div>
           </div>
-          <div class="stat-box">
-            <span class="label">Corrective Actions</span>
-            <span class="value success">37</span>
-          </div>
-          <div class="stat-box">
-            <span class="label">Pending Review</span>
-            <span class="value neutral">12</span>
+          <div class="chart-body column-chart resolution-chart">
+            <div class="y-axis">
+              <span>80</span><span>60</span><span>40</span><span>20</span><span>0</span>
+            </div>
+            <div class="chart-area">
+              <div class="grid-lines">
+                <div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div>
+              </div>
+              <div class="columns-container">
+                <!-- Group 1 -->
+                <div class="col-group">
+                  <div class="bar baseline" style="height: 80%"></div>
+                  <div class="bar projected" style="height: 25%"></div>
+                  <span class="x-label">T+0</span>
+                </div>
+                <!-- Group 2 -->
+                <div class="col-group">
+                  <div class="bar baseline" style="height: 65%"></div>
+                  <div class="bar projected" style="height: 20%"></div>
+                  <span class="x-label">T+1</span>
+                </div>
+                <!-- Group 3 -->
+                <div class="col-group">
+                  <div class="bar baseline" style="height: 45%"></div>
+                  <div class="bar projected" style="height: 15%"></div>
+                  <span class="x-label">T+2</span>
+                </div>
+                <!-- Group 4 -->
+                <div class="col-group">
+                  <div class="bar baseline" style="height: 30%"></div>
+                  <div class="bar projected" style="height: 10%"></div>
+                  <span class="x-label">T+3</span>
+                </div>
+                 <!-- Group 5 -->
+                 <div class="col-group">
+                  <div class="bar baseline" style="height: 20%"></div>
+                  <div class="bar projected" style="height: 5%"></div>
+                  <span class="x-label">T+4</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="data-table">
-          <div class="table-header"></div>
-          <div class="table-row">
-            <span class="cell sm"></span><span class="cell lg"></span><span class="cell md"></span>
+
+        <div class="chart-row">
+          <!-- Chart 2: Breaks by Field (Stacked Bar) -->
+          <div class="chart-card">
+            <div class="chart-header">
+              <h3>Breaks by Field</h3>
+              <div class="legend">
+                <div class="legend-item"><span class="dot projected"></span> Remaining</div>
+                <div class="legend-item"><span class="dot resolved"></span> Resolved</div>
+              </div>
+            </div>
+            <div class="chart-body bar-chart field-chart">
+              <!-- Row 1 -->
+              <div class="bar-row">
+                <span class="bar-label">Price</span>
+                <div class="bar-track">
+                  <div class="segment projected" style="width: 30%"></div>
+                  <div class="segment resolved" style="width: 50%"></div>
+                </div>
+              </div>
+              <!-- Row 2 -->
+              <div class="bar-row">
+                <span class="bar-label">Qty</span>
+                <div class="bar-track">
+                  <div class="segment projected" style="width: 20%"></div>
+                  <div class="segment resolved" style="width: 60%"></div>
+                </div>
+              </div>
+              <!-- Row 3 -->
+              <div class="bar-row">
+                <span class="bar-label">Ccy</span>
+                <div class="bar-track">
+                  <div class="segment projected" style="width: 15%"></div>
+                  <div class="segment resolved" style="width: 40%"></div>
+                </div>
+              </div>
+               <!-- Row 4 -->
+               <div class="bar-row">
+                <span class="bar-label">Date</span>
+                <div class="bar-track">
+                  <div class="segment projected" style="width: 10%"></div>
+                  <div class="segment resolved" style="width: 30%"></div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="table-row">
-            <span class="cell sm"></span><span class="cell lg"></span><span class="cell md"></span>
-          </div>
-          <div class="table-row">
-            <span class="cell sm"></span><span class="cell lg"></span><span class="cell md"></span>
-          </div>
-          <div class="table-row">
-            <span class="cell sm"></span><span class="cell lg"></span><span class="cell md"></span>
+
+          <!-- Chart 3: Valuation Timeliness (Column) -->
+          <div class="chart-card">
+            <div class="chart-header">
+              <h3>Valuation Timeliness</h3>
+            </div>
+            <div class="chart-body column-chart timeliness-chart">
+               <!-- No y-axis visible for simplicity in small card -->
+              <div class="chart-area">
+                <div class="grid-lines">
+                  <div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div>
+                </div>
+                <div class="columns-container">
+                  <div class="col-group">
+                    <div class="bar baseline" style="height: 70%"></div>
+                    <div class="bar projected" style="height: 90%"></div>
+                    <span class="x-label success">On Time</span>
+                  </div>
+                  <div class="col-group">
+                    <div class="bar baseline" style="height: 40%"></div>
+                    <div class="bar projected" style="height: 60%"></div>
+                    <span class="x-label warn">Late</span>
+                  </div>
+                  <div class="col-group">
+                    <div class="bar baseline" style="height: 20%"></div>
+                    <div class="bar projected" style="height: 30%"></div>
+                    <span class="x-label danger">Error</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>
@@ -108,6 +212,7 @@
     display: flex;
     gap: 24px;
     padding-top: 24px;
+    margin-bottom: 32px;
     border-top: 1px solid var(--line);
     color: var(--text-dim);
     font-size: 0.85rem;
@@ -120,19 +225,21 @@
 
   /* Mockup Styling */
   .hero-mockup {
-    /* .panel class handles border/bg/shadow/radius */
     display: flex;
     flex-direction: column;
-    min-height: 360px;
+    min-height: 400px;
     aspect-ratio: 16/10;
+    /* Dark frame */
+    background: #2C2F36;
+    border-color: #444;
   }
 
   .mockup-header {
-    background: rgba(0,0,0,0.2);
-    padding: 12px 16px;
+    background: #1F2228;
+    padding: 10px 16px;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid #333;
   }
   .window-controls {
     display: flex;
@@ -143,101 +250,213 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: var(--line); /* Muted controls */
+    background: #555;
   }
   .window-title {
     font-size: 0.75rem;
-    color: var(--text-dim);
+    color: #999;
     font-family: monospace;
   }
 
   .mockup-body {
     flex: 1;
     display: flex;
+    background: #F4F6F8; /* Light background for app content */
+    overflow: hidden;
   }
 
   .sidebar {
-    width: 60px;
-    border-right: 1px solid var(--line);
-    padding: 16px 12px;
+    width: 50px;
+    background: #FFFFFF;
+    border-right: 1px solid var(--rpTrackGrey);
+    padding: 16px 0;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    background: rgba(0,0,0,0.1);
+    align-items: center;
+    gap: 16px;
   }
-  .sidebar-row {
-    height: 6px;
-    border-radius: 3px;
-    background: var(--line);
-    opacity: 0.5;
+  .sidebar-icon {
+    width: 24px; height: 24px;
+    border-radius: 6px;
+    background: var(--rpTrackGrey);
   }
-  .sidebar-row.active {
-    background: var(--gold);
-    opacity: 0.6;
-    width: 60%;
+  .sidebar-icon.active {
+    background: var(--rpBlue);
   }
 
   .main-view {
     flex: 1;
-    padding: 24px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
-  }
-
-  .stats-grid {
-    display: flex;
     gap: 16px;
+    color: var(--rpText);
   }
-  .stat-box {
-    flex: 1;
-    background: rgba(255,255,255,0.03);
-    border: 1px solid var(--line);
+
+  /* Charts Layout */
+  .chart-card {
+    background: #FFFFFF;
     border-radius: 8px;
-    padding: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border: 1px solid var(--rpTrackGrey);
     display: flex;
     flex-direction: column;
-    gap: 4px;
-  }
-  .stat-box .label {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: var(--text-dim);
-  }
-  .stat-box .value {
-    font-size: 1.4rem;
-    font-weight: 700;
-  }
-  .value.warning { color: #FF6B6B; }
-  .value.success { color: #51CF66; }
-  .value.neutral { color: var(--text); }
-
-  .data-table {
-    flex: 1;
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  .table-header {
-    height: 24px;
-    background: rgba(255,255,255,0.03);
-    border-bottom: 1px solid var(--line);
-  }
-  .table-row {
-    height: 28px;
-    border-bottom: 1px solid var(--line);
-    display: flex;
-    align-items: center;
-    padding: 0 12px;
     gap: 12px;
   }
-  .table-row:last-child { border-bottom: none; }
+  .chart-card.full-width {
+    flex: 1.2; /* Taller top chart */
+  }
+  .chart-row {
+    display: flex;
+    gap: 16px;
+    flex: 1;
+  }
+  .chart-row .chart-card {
+    flex: 1;
+  }
 
-  .cell { height: 6px; border-radius: 3px; background: var(--line); opacity: 0.3; }
-  .cell.sm { width: 20%; }
-  .cell.lg { width: 50%; }
-  .cell.md { width: 30%; }
+  .chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .chart-header h3 {
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--rpText);
+  }
+  .legend {
+    display: flex;
+    gap: 12px;
+    font-size: 0.7rem;
+    color: #666;
+  }
+  .legend-item { display: flex; align-items: center; gap: 4px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+  .dot.baseline { background: var(--rpBaselineGrey); }
+  .dot.projected { background: var(--rpBlue); }
+  .dot.resolved { background: var(--rpResolvedTint); }
+
+  /* Chart Visuals */
+  .chart-body {
+    flex: 1;
+    position: relative;
+    min-height: 0; /* Flex fix */
+  }
+
+  /* Column Chart */
+  .column-chart {
+    display: flex;
+    gap: 12px;
+  }
+  .y-axis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 0.65rem;
+    color: #888;
+    padding-bottom: 20px; /* Space for x-labels */
+    padding-right: 8px;
+  }
+  .chart-area {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .grid-lines {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 0;
+  }
+  .grid-lines .line {
+    border-top: 1px solid var(--rpTrackGrey);
+    width: 100%;
+    height: 0;
+  }
+  .columns-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 100%;
+    z-index: 1;
+    padding-bottom: 20px; /* Space for labels */
+    padding-top: 10px;
+  }
+  .col-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    gap: 0; /* Bars touch or overlap? User said paired. */
+  }
+  .col-group .bar {
+    width: 12px;
+    border-radius: 2px 2px 0 0;
+    position: absolute;
+    bottom: 0;
+  }
+  .col-group .bar.baseline {
+    background: var(--rpBaselineGrey);
+    right: 50%;
+    margin-right: 1px;
+    z-index: 1;
+  }
+  .col-group .bar.projected {
+    background: var(--rpBlue);
+    left: 50%;
+    margin-left: 1px;
+    z-index: 2;
+  }
+
+  .x-label {
+    position: absolute;
+    bottom: -20px;
+    font-size: 0.65rem;
+    color: #666;
+    width: 100%;
+    text-align: center;
+  }
+  .x-label.success { color: var(--rpSuccess); font-weight: 600; }
+  .x-label.warn { color: var(--rpWarn); font-weight: 600; }
+  .x-label.danger { color: var(--rpDanger); font-weight: 600; }
+
+  /* Bar Chart (Stacked) */
+  .bar-chart {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .bar-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .bar-label {
+    width: 30px;
+    font-size: 0.7rem;
+    color: #666;
+    text-align: right;
+  }
+  .bar-track {
+    flex: 1;
+    height: 12px;
+    background: var(--rpTrackGrey);
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+  }
+  .segment.projected { background: var(--rpBlue); }
+  .segment.resolved { background: var(--rpResolvedTint); }
 
   @media (max-width: 900px) {
     .trust-strip { justify-content: center; }

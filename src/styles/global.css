@@ -10,6 +10,18 @@
   --bronze: #BD9A4E;       /* hover/active */
   --glow: rgba(220,190,109,.18);
 
+  /* RegParity App Theme (Light Mode Window) */
+  --rpBlue: #1572E0;
+  --rpBlueBright: #0575F9;
+  --rpBlue100: #E2F0FE;
+  --rpSuccess: #1C7C27;
+  --rpDanger: #9F2830;
+  --rpWarn: #C48D1B;
+  --rpBaselineGrey: #B8BDC7;
+  --rpTrackGrey: #EEF1F4;
+  --rpResolvedTint: #BFD7FF;
+  --rpText: #171A21;
+
   --radius: 16px;
   --radius-lg: 22px;
   --shadow: 0 16px 50px rgba(0,0,0,.55);
