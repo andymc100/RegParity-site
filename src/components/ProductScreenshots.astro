@@ -1,0 +1,79 @@
+---
+import { Image } from 'astro:assets';
+import breaksImage from '../assets/screenshots/breaks-by-field.webp';
+import valuationImage from '../assets/screenshots/valuation-timeliness.webp';
+---
+<section class="wrap product-section">
+  <div class="product-grid">
+    <div class="product-item">
+      <div class="screenshot">
+        <Image src={breaksImage} alt="Breaks by Field Analysis" width={540} height={340} />
+      </div>
+      <div class="product-text">
+        <h3>Granular Break Analysis</h3>
+        <p>Drill down into breaks by field to identify systemic issues.</p>
+      </div>
+    </div>
+
+    <div class="product-item">
+      <div class="screenshot">
+        <Image src={valuationImage} alt="Valuation Timeliness Tracking" width={540} height={340} />
+      </div>
+      <div class="product-text">
+        <h3>Valuation Timeliness</h3>
+        <p>Monitor submission deadlines and catch late valuations instantly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .product-section {
+    padding: 60px 22px;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .product-item {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .screenshot {
+    /* Class defined in global.css, adding aspect ratio maintenance */
+    aspect-ratio: 16/10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FAFBFC;
+  }
+
+  .screenshot img {
+    width: 100%;
+    height: auto;
+  }
+
+  .product-text h3 {
+    font-size: 1.25rem;
+    margin: 0 0 8px;
+    color: var(--rpText);
+  }
+
+  .product-text p {
+    font-size: 1rem;
+    color: var(--rpTextMuted);
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .product-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

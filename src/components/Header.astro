@@ -1,0 +1,41 @@
+---
+---
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="/" class="logo-wrapper">
+      <!-- Using icon + text for better dark mode compatibility -->
+      <img src="/brand/png/logo-icon.png" alt="RegParity" height="28" width="28" />
+      <span class="logo-text">RegParity</span>
+    </a>
+
+    <div class="navlinks">
+      <a href="/product">Product</a>
+      <a href="/contact">Contact</a>
+      <a href="/download" class="btn primary sm">Request download link</a>
+    </div>
+  </div>
+</header>
+
+<style>
+  /* Local overrides or specific styles not in global */
+  .logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--text);
+    letter-spacing: -0.5px;
+  }
+
+  .btn.sm {
+    padding: 8px 18px;
+    font-size: 0.85rem;
+  }
+
+  /* Ensure logo icon doesn't get weirdly stretched */
+  .logo-wrapper img {
+    height: 28px;
+    width: auto;
+  }
+</style>

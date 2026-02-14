@@ -1,0 +1,41 @@
+---
+---
+<footer>
+  <div class="wrap footer-content">
+    <div class="footer-left">
+      <img src="/brand/png/logo-icon.png" alt="RegParity" height="24" width="24" />
+      <span>&copy; {new Date().getFullYear()} RegParity.</span>
+    </div>
+    <div class="footer-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* global.css handles padding/border/color on footer element */
+  }
+  .footer-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .footer-links {
+    display: flex;
+    gap: 24px;
+  }
+  a:hover {
+    color: var(--text);
+  }
+  @media (max-width: 600px) {
+    .footer-content {
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+</style>

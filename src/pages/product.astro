@@ -1,0 +1,129 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+import fieldModImage from '../assets/screenshots/field-modifications.webp';
+---
+
+<BaseLayout title="Product | RegParity" description="RegParity aggregates breaks, surfaces actionable corrections, and preserves audit trails for EMIR and SFTR reconciliations.">
+  <div class="wrap page-content">
+    <div class="content-container">
+
+      <div class="screenshot lead-image">
+        <Image src={fieldModImage} alt="Field Modifications Workflow" width={800} height={500} />
+      </div>
+
+      <section class="section">
+        <span class="kicker">The Problem</span>
+        <h1>Reconciliation highlights discrepancies. Correcting them is manual, slow, and opaque.</h1>
+      </section>
+
+      <section class="section">
+        <h2>What RegParity Does</h2>
+        <ul>
+          <li>Aggregates breaks</li>
+          <li>Surfaces actionable corrections</li>
+          <li>Preserves audit trail</li>
+          <li>Prepares outbound updates</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Deployment Model</h2>
+        <ul class="deployment-list">
+          <li>
+            <strong>Windows desktop application</strong>
+            <p>Runs locally on your infrastructure.</p>
+          </li>
+          <li>
+            <strong>Designed for restricted environments</strong>
+            <p>No internet access required for core functionality.</p>
+          </li>
+          <li>
+            <strong>No external data transmission</strong>
+            <p>Your trade data never leaves your network.</p>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  <CTASection />
+</BaseLayout>
+
+<style>
+  .page-content {
+    padding: 80px 22px;
+    display: flex;
+    justify-content: center;
+  }
+  .content-container {
+    max-width: 720px;
+    width: 100%;
+  }
+
+  .lead-image {
+    margin-bottom: 60px;
+    /* Aspect ratio handled by global .screenshot class or intrinsic size */
+    aspect-ratio: 16/10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FAFBFC;
+  }
+
+  .lead-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .section {
+    margin-bottom: 80px;
+  }
+  .kicker {
+    display: block;
+    color: var(--rpBlue);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+  }
+  h1 {
+    font-size: clamp(2rem, 3vw, 2.75rem);
+    line-height: 1.2;
+    margin: 0;
+    color: var(--rpText);
+  }
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 24px;
+    color: var(--rpText);
+  }
+  ul {
+    padding-left: 20px;
+    color: var(--rpTextMuted);
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  li {
+    margin-bottom: 12px;
+  }
+  .deployment-list {
+    list-style: none;
+    padding: 0;
+  }
+  .deployment-list li {
+    margin-bottom: 24px;
+    padding-left: 16px;
+    border-left: 2px solid var(--rpBorder);
+  }
+  .deployment-list strong {
+    color: var(--rpText);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .deployment-list p {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+</style>
