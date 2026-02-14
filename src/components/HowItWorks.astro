@@ -1,109 +1,86 @@
 ---
-const steps = [
-  {
-    title: "Load TR position files",
-    description: "Ingest massive position files and reconciliation reports directly from your TR/repositories.",
-  },
-  {
-    title: "Review breaks & corrections",
-    description: "RegParity surfaces the discrepancies and proposes the exact corrective actions needed.",
-  },
-  {
-    title: "Export compliant updates",
-    description: "Generate validation-ready outbound files with a complete, immutable audit trail attached.",
-  },
-];
 ---
-<section class="how-it-works">
-  <div class="container">
-    <h2>How it works</h2>
-    <div class="steps-container">
-      {steps.map((step, index) => (
-        <div class="step-item">
-          <div class="step-header">
-            <span class="step-number">{index + 1}</span>
-            <h3>{step.title}</h3>
-          </div>
-          <p>{step.description}</p>
-        </div>
-      ))}
+<section class="wrap section-spacing">
+  <h2>How it works</h2>
+  <div class="steps-grid">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Load TR position files</h3>
+      <p>Ingest massive position files and reconciliation reports directly from your TR/repositories.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Review breaks & corrections</h3>
+      <p>RegParity surfaces the discrepancies and proposes the exact corrective actions needed.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Export compliant updates</h3>
+      <p>Generate validation-ready outbound files with a complete, immutable audit trail attached.</p>
     </div>
   </div>
 </section>
 
 <style>
-  .how-it-works {
-    padding: 6rem 0;
-    border-bottom: 1px solid var(--color-border);
+  .section-spacing {
+    padding: 80px 22px;
+    border-bottom: 1px solid var(--line);
   }
   h2 {
-    font-size: 2rem;
-    margin-bottom: 4rem;
     text-align: center;
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    margin-bottom: 60px;
+    color: var(--text);
   }
-  .steps-container {
+  .steps-grid {
     display: grid;
-    gap: 3rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
   }
-  @media (min-width: 768px) {
-    .steps-container {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 4rem;
-    }
-  }
-  .step-item {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  .step {
     position: relative;
+    padding-right: 20px;
   }
-
-  /* Connecting line for desktop */
-  @media (min-width: 768px) {
-    .step-item:not(:last-child)::after {
-      content: '';
-      position: absolute;
-      top: 1.5rem;
-      right: -2.5rem;
-      width: 1rem;
-      height: 2px;
-      background: #e0e0e0;
-    }
-  }
-
-  .step-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .step-number {
-    display: flex;
+  .step-num {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 3rem;
-    height: 3rem;
-    background: transparent;
-    color: var(--color-primary);
-    border: 2px solid var(--color-primary);
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
+    border: 1px solid var(--gold);
+    color: var(--gold);
     font-weight: 700;
-    font-size: 1.25rem;
-    flex-shrink: 0;
+    margin-bottom: 24px;
+    background: rgba(220,190,109,0.05);
   }
-
-  h3 {
+  .step h3 {
+    margin: 0 0 12px;
     font-size: 1.25rem;
-    font-weight: 700;
-    margin: 0;
+    color: var(--text);
   }
-
-  p {
-    font-size: 1rem;
-    color: #666;
-    margin: 0;
+  .step p {
+    color: var(--text-dim);
     line-height: 1.6;
-    padding-left: 0.5rem; /* Slight align with header text visually */
+    margin: 0;
+  }
+
+  /* Connector Line */
+  .step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    right: -10px;
+    height: 1px;
+    background: var(--line);
+  }
+
+  @media (max-width: 768px) {
+    .steps-grid { grid-template-columns: 1fr; gap: 40px; }
+    .step:not(:last-child)::after {
+      /* Vertical line for mobile? Or just hide it */
+      display: none;
+    }
   }
 </style>

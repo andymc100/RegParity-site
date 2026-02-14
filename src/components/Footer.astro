@@ -1,12 +1,12 @@
 ---
 ---
 <footer>
-  <div class="container footer-container">
-    <div class="footer-logo">
-      <img src="/brand/png/logo-icon.png" alt="RegParity" height="30" />
+  <div class="wrap footer-content">
+    <div class="footer-left">
+      <img src="/brand/png/logo-icon.png" alt="RegParity" height="24" width="24" />
+      <span>&copy; {new Date().getFullYear()} RegParity.</span>
     </div>
     <div class="footer-links">
-      <span>&copy; {new Date().getFullYear()} RegParity.</span>
       <a href="/privacy">Privacy</a>
       <a href="/contact">Contact</a>
     </div>
@@ -14,28 +14,28 @@
 </footer>
 
 <style>
-  footer {
-    border-top: 1px solid var(--color-border);
-    padding: 2rem 0;
-    margin-top: 4rem;
-    color: #666;
-    font-size: 0.9rem;
-  }
-  .footer-container {
+  .footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* global.css handles padding/border/color on footer element */
   }
-  .footer-logo img {
-    height: 30px;
-    width: auto;
+  .footer-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
   }
   .footer-links {
     display: flex;
-    gap: 1.5rem;
+    gap: 24px;
   }
-  a {
-    color: inherit;
-    text-decoration: underline;
+  a:hover {
+    color: var(--text);
+  }
+  @media (max-width: 600px) {
+    .footer-content {
+      flex-direction: column;
+      gap: 16px;
+    }
   }
 </style>

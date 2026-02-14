@@ -2,26 +2,27 @@
 const features = [
   {
     title: "Prioritised corrective actions",
-    description: "Reconciliation tells you what’s wrong. RegParity shows what to correct next.",
+    description: "See what to correct next — not just what’s wrong.",
     icon: "bolt"
   },
   {
-    title: "Full audit trail",
-    description: "Every correction is traceable. Clear provenance from break to outbound update.",
+    title: "Audit trail by default",
+    description: "Trace every change from break → decision → outbound update.",
     icon: "shield"
   },
   {
-    title: "Designed for real trade volumes",
-    description: "Built to handle large position files and repeatable workflows.",
+    title: "Built for real trade volumes",
+    description: "Designed for large position files and repeatable outcomes.",
     icon: "server"
   },
 ];
 ---
-<section class="features">
-  <div class="container features-container">
+
+<section class="wrap">
+  <div class="grid">
     {features.map(feature => (
-      <div class="feature-card">
-        <div class="feature-icon">
+      <div class="card">
+        <div class="icon-wrapper">
           {feature.icon === 'bolt' && (
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
           )}
@@ -40,52 +41,26 @@ const features = [
 </section>
 
 <style>
-  .features {
-    padding: 6rem 0;
-    border-bottom: 1px solid var(--color-border);
-    background-color: #fafafa;
+  /* Local icon styling */
+  .icon-wrapper {
+    margin-bottom: 16px;
+    color: var(--gold);
+    display: inline-flex;
+    padding: 10px;
+    background: rgba(220,190,109,0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(220,190,109,0.2);
   }
-  .features-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
+
+  /* Card hover effect enhancement */
+  .card:hover .icon-wrapper {
+    background: rgba(220,190,109,0.2);
+    border-color: rgba(220,190,109,0.4);
+    box-shadow: 0 0 15px rgba(220,190,109,0.15);
   }
-  @media (min-width: 768px) {
-    .features-container {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-  .feature-card {
-    background: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 2rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  .feature-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px -5px rgba(0,0,0,0.05);
-  }
-  .feature-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 3rem;
-    height: 3rem;
-    background: #f5f5f5;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-    color: #333;
-  }
-  .feature-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.75rem;
-    font-weight: 700;
-  }
-  .feature-card p {
-    color: #666;
-    line-height: 1.6;
-    font-size: 1rem;
-    margin-bottom: 0;
-  }
+
+  /*
+     Note: .grid, .card, h3, p styles are inherited from global.css
+     to ensure consistency with the design system.
+  */
 </style>

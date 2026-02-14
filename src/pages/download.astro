@@ -3,89 +3,63 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Download RegParity | Request Access">
-  <div class="container download-page">
-    <h1>Request RegParity</h1>
-    <p>Share your work email and we’ll send an expiring download link, along with a short getting-started guide.</p>
+  <div class="wrap page-content">
+    <div class="form-container">
+      <h1>Request RegParity</h1>
+      <p>Share your work email and we’ll send an expiring download link, along with a short getting-started guide.</p>
 
-    <!-- TODO: Replace __FORM_ENDPOINT__ with Formspree/Getform endpoint -->
-    <form action="__FORM_ENDPOINT__" method="POST" class="download-form">
-      <div class="form-group">
+      <!-- TODO: Replace __FORM_ENDPOINT__ with Formspree/Getform endpoint -->
+      <form action="__FORM_ENDPOINT__" method="POST">
         <label for="name">Name *</label>
         <input type="text" id="name" name="name" required />
-      </div>
 
-      <div class="form-group">
         <label for="company">Company *</label>
         <input type="text" id="company" name="company" required />
-      </div>
 
-      <div class="form-group">
         <label for="email">Work Email *</label>
         <input type="email" id="email" name="email" required />
-      </div>
 
-      <div class="form-group">
         <label for="it-email">IT Contact Email (optional)</label>
         <input type="email" id="it-email" name="it_email" />
-      </div>
 
-      <div class="form-group">
         <label for="message">Message (optional)</label>
         <textarea id="message" name="message" rows="4"></textarea>
-      </div>
 
-      <button type="submit" class="btn">Request download link</button>
-    </form>
+        <button type="submit" class="btn primary full-width">Request download link</button>
+      </form>
 
-    <p class="note">Note: If your IT team needs to download and scan the application first, we can send the link directly to them.</p>
+      <p class="note">Note: If your IT team needs to download and scan the application first, we can send the link directly to them.</p>
+    </div>
   </div>
 </BaseLayout>
 
 <style>
-  .download-page {
-    padding: 4rem 1.5rem;
-    max-width: 600px;
-    margin: 0 auto;
+  .page-content {
+    padding: 80px 22px;
+    display: flex;
+    justify-content: center;
+  }
+  .form-container {
+    width: 100%;
+    max-width: 520px;
   }
   h1 {
     font-size: 2.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
+    color: var(--text);
   }
   p {
-    font-size: 1.125rem;
-    margin-bottom: 2rem;
-    color: #444;
-  }
-  .download-form {
-    background: #fafafa;
-    padding: 2rem;
-    border-radius: 8px;
-    border: 1px solid var(--color-border);
-  }
-  .form-group {
-    margin-bottom: 1.5rem;
-  }
-  label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-  }
-  input, textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-family: inherit;
-  }
-  button {
-    width: 100%;
-    font-size: 1.125rem;
+    color: var(--text-dim);
+    margin-bottom: 32px;
+    line-height: 1.6;
   }
   .note {
-    margin-top: 2rem;
-    font-size: 0.9rem;
-    color: #666;
-    font-style: italic;
+    font-size: 0.85rem;
+    margin-top: 24px;
+    opacity: 0.7;
+  }
+  .full-width {
+    width: 100%;
+    margin-top: 16px;
   }
 </style>

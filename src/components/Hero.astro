@@ -1,64 +1,93 @@
 ---
 ---
-<section class="hero">
-  <div class="container hero-container">
-    <div class="hero-content">
-      <h1>Fix EMIR and SFTR reconciliation breaks faster.</h1>
-      <p>RegParity turns reconciliation and valuation breaks into prioritised corrective actions — with a full audit trail and compliant outbound updates.</p>
-
-      <div class="hero-badges">
-        <span>Restricted environments</span>
-        <span class="separator">•</span>
-        <span>Full audit trail</span>
-        <span class="separator">•</span>
-        <span>Large-file friendly</span>
-        <span class="separator">•</span>
-        <span>Expiring download links</span>
-      </div>
-
-      <div class="hero-actions">
-        <a href="/download" class="btn btn-primary">Request download link</a>
-        <a href="/contact" class="btn btn-secondary">Contact</a>
-      </div>
+<section class="hero wrap">
+  <div class="hero-content">
+    <div class="kicker">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+      </svg>
+      <span>Institutional Grade</span>
     </div>
 
-    <div class="hero-mockup">
-      <div class="mockup-window">
-        <div class="mockup-header">
-          <span class="dot red"></span>
-          <span class="dot yellow"></span>
-          <span class="dot green"></span>
-          <span class="mockup-title">RegParity Dashboard</span>
-        </div>
-        <div class="mockup-body">
-          <div class="mockup-sidebar">
-            <div class="sidebar-item active"></div>
-            <div class="sidebar-item"></div>
-            <div class="sidebar-item"></div>
+    <h1>Fix EMIR and SFTR reconciliation breaks faster.</h1>
+    <p>RegParity turns reconciliation and valuation breaks into prioritised corrective actions — with a full audit trail and compliant outbound updates.</p>
+
+    <div class="hero-actions">
+      <a href="/download" class="btn primary">Request download link</a>
+      <!-- Secondary button styled as ghost via base .btn class -->
+      <a href="/contact" class="btn">Contact</a>
+    </div>
+
+    <div class="trust-strip">
+      <div class="trust-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="9" y1="3" x2="9" y2="21"></line>
+        </svg>
+        <span>Windows Desktop</span>
+      </div>
+      <div class="trust-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        </svg>
+        <span>Offline-First</span>
+      </div>
+      <div class="trust-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        <span>Full Audit Trail</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel hero-mockup">
+    <!-- CSS-Only Mockup optimized for Dark Theme -->
+    <div class="mockup-header">
+      <div class="window-controls">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="window-title">RegParity Dashboard — Trade Reconciliation</div>
+    </div>
+    <div class="mockup-body">
+      <div class="sidebar">
+        <div class="sidebar-row active"></div>
+        <div class="sidebar-row"></div>
+        <div class="sidebar-row"></div>
+        <div class="sidebar-row"></div>
+      </div>
+      <div class="main-view">
+        <div class="stats-grid">
+          <div class="stat-box">
+            <span class="label">Breaks Found</span>
+            <span class="value warning">124</span>
           </div>
-          <div class="mockup-content">
-            <div class="stats-row">
-              <div class="stat-card">
-                <span class="stat-label">Breaks found</span>
-                <span class="stat-value error">124</span>
-              </div>
-              <div class="stat-card">
-                <span class="stat-label">Actions prepared</span>
-                <span class="stat-value success">37</span>
-              </div>
-            </div>
-            <div class="chart-placeholder">
-              <div class="bar" style="height: 60%"></div>
-              <div class="bar" style="height: 85%"></div>
-              <div class="bar" style="height: 40%"></div>
-              <div class="bar" style="height: 70%"></div>
-              <div class="bar" style="height: 50%"></div>
-            </div>
-            <div class="table-rows">
-              <div class="row"></div>
-              <div class="row"></div>
-              <div class="row"></div>
-            </div>
+          <div class="stat-box">
+            <span class="label">Corrective Actions</span>
+            <span class="value success">37</span>
+          </div>
+          <div class="stat-box">
+            <span class="label">Pending Review</span>
+            <span class="value neutral">12</span>
+          </div>
+        </div>
+        <div class="data-table">
+          <div class="table-header"></div>
+          <div class="table-row">
+            <span class="cell sm"></span><span class="cell lg"></span><span class="cell md"></span>
+          </div>
+          <div class="table-row">
+            <span class="cell sm"></span><span class="cell lg"></span><span class="cell md"></span>
+          </div>
+          <div class="table-row">
+            <span class="cell sm"></span><span class="cell lg"></span><span class="cell md"></span>
+          </div>
+          <div class="table-row">
+            <span class="cell sm"></span><span class="cell lg"></span><span class="cell md"></span>
           </div>
         </div>
       </div>
@@ -67,222 +96,150 @@
 </section>
 
 <style>
-  .hero {
-    padding: 4rem 0 6rem;
-    border-bottom: 1px solid var(--color-border);
-    overflow: hidden; /* For any potential glow overflow */
-  }
-
-  .hero-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 4rem;
-    align-items: center;
-  }
-
-  @media (min-width: 900px) {
-    .hero-container {
-      grid-template-columns: 1.1fr 0.9fr;
-    }
-  }
-
-  /* Content */
-  .hero-content h1 {
-    font-size: 3rem;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    margin-bottom: 1.5rem;
-    position: relative;
-    display: inline-block;
-  }
-
-  /* Subtle gradient underline for accent */
-  .hero-content h1::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
-    margin-top: 1rem;
-    border-radius: 2px;
-    opacity: 0.8;
-  }
-
-  .hero-content p {
-    font-size: 1.25rem;
-    color: #444;
-    margin-bottom: 1.5rem;
-    max-width: 50ch;
-  }
-
-  /* Badges */
-  .hero-badges {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 2rem;
-    font-size: 0.9rem;
-    color: #666;
-    font-weight: 500;
-  }
-
-  .separator {
-    color: #ccc;
-  }
-
-  /* Actions */
+  /* Layout Adjustments */
   .hero-actions {
     display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 32px;
   }
 
-  /* Mockup */
+  /* Trust Strip */
+  .trust-strip {
+    display: flex;
+    gap: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    color: var(--text-dim);
+    font-size: 0.85rem;
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Mockup Styling */
   .hero-mockup {
-    position: relative;
-    perspective: 1000px;
-  }
-
-  .mockup-window {
-    background: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1), 0 0 0 1px rgba(0,0,0,0.02);
-    overflow: hidden;
-    transform: rotateY(-2deg) rotateX(2deg);
-    transition: transform 0.3s ease;
-  }
-
-  .hero-mockup:hover .mockup-window {
-    transform: rotateY(0) rotateX(0);
+    /* .panel class handles border/bg/shadow/radius */
+    display: flex;
+    flex-direction: column;
+    min-height: 360px;
+    aspect-ratio: 16/10;
   }
 
   .mockup-header {
-    background: #f5f5f5;
-    padding: 0.75rem 1rem;
-    border-bottom: 1px solid #e0e0e0;
+    background: rgba(0,0,0,0.2);
+    padding: 12px 16px;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    border-bottom: 1px solid var(--line);
   }
-
-  .dot {
+  .window-controls {
+    display: flex;
+    gap: 6px;
+    margin-right: 16px;
+  }
+  .window-controls span {
     width: 10px;
     height: 10px;
     border-radius: 50%;
+    background: var(--line); /* Muted controls */
   }
-
-  .dot.red { background: #ff5f56; }
-  .dot.yellow { background: #ffbd2e; }
-  .dot.green { background: #27c93f; }
-
-  .mockup-title {
-    margin-left: 1rem;
-    font-size: 0.8rem;
-    color: #888;
+  .window-title {
+    font-size: 0.75rem;
+    color: var(--text-dim);
     font-family: monospace;
   }
 
   .mockup-body {
+    flex: 1;
     display: flex;
-    height: 320px;
   }
 
-  .mockup-sidebar {
+  .sidebar {
     width: 60px;
-    background: #f9f9f9;
-    border-right: 1px solid #eee;
-    padding: 1rem 0.5rem;
+    border-right: 1px solid var(--line);
+    padding: 16px 12px;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 12px;
+    background: rgba(0,0,0,0.1);
+  }
+  .sidebar-row {
+    height: 6px;
+    border-radius: 3px;
+    background: var(--line);
+    opacity: 0.5;
+  }
+  .sidebar-row.active {
+    background: var(--gold);
+    opacity: 0.6;
+    width: 60%;
   }
 
-  .sidebar-item {
-    height: 8px;
-    background: #e0e0e0;
-    border-radius: 4px;
-    width: 100%;
-  }
-
-  .sidebar-item.active {
-    background: #bbb;
-    width: 70%;
-  }
-
-  .mockup-content {
+  .main-view {
     flex: 1;
-    padding: 1.5rem;
+    padding: 24px;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    background: #fff;
+    gap: 24px;
   }
 
-  .stats-row {
+  .stats-grid {
     display: flex;
-    gap: 1.5rem;
+    gap: 16px;
   }
-
-  .stat-card {
+  .stat-box {
     flex: 1;
-    background: #fff;
-    border: 1px solid #eee;
-    padding: 1rem;
-    border-radius: 6px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
   }
-
-  .stat-label {
-    display: block;
-    font-size: 0.75rem;
+  .stat-box .label {
+    font-size: 0.7rem;
     text-transform: uppercase;
-    color: #888;
-    margin-bottom: 0.25rem;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.5px;
+    color: var(--text-dim);
   }
-
-  .stat-value {
-    font-size: 1.5rem;
+  .stat-box .value {
+    font-size: 1.4rem;
     font-weight: 700;
   }
+  .value.warning { color: #FF6B6B; }
+  .value.success { color: #51CF66; }
+  .value.neutral { color: var(--text); }
 
-  .stat-value.error { color: #d32f2f; }
-  .stat-value.success { color: #2e7d32; }
-
-  .chart-placeholder {
-    height: 100px;
+  .data-table {
+    flex: 1;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .table-header {
+    height: 24px;
+    background: rgba(255,255,255,0.03);
+    border-bottom: 1px solid var(--line);
+  }
+  .table-row {
+    height: 28px;
+    border-bottom: 1px solid var(--line);
     display: flex;
-    align-items: flex-end;
-    gap: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid #eee;
-    justify-content: space-around;
+    align-items: center;
+    padding: 0 12px;
+    gap: 12px;
   }
+  .table-row:last-child { border-bottom: none; }
 
-  .bar {
-    width: 12%;
-    background: #eee;
-    border-radius: 4px 4px 0 0;
+  .cell { height: 6px; border-radius: 3px; background: var(--line); opacity: 0.3; }
+  .cell.sm { width: 20%; }
+  .cell.lg { width: 50%; }
+  .cell.md { width: 30%; }
+
+  @media (max-width: 900px) {
+    .trust-strip { justify-content: center; }
   }
-
-  .bar:nth-child(2) { background: #333; } /* Accent */
-
-  .table-rows {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .row {
-    height: 10px;
-    background: #f5f5f5;
-    border-radius: 4px;
-    width: 100%;
-  }
-
-  .row:nth-child(2) { width: 85%; }
-  .row:nth-child(3) { width: 92%; }
 </style>
