@@ -4,16 +4,18 @@ import breaksByField from '../assets/screenshots/breaks-by-field.webp';
 import valuationTimeliness from '../assets/screenshots/valuation-timeliness.webp';
 ---
 
-<section class="product-screenshots wrap">
-  <div class="grid-two-up">
-    <div class="screenshot-wrapper">
-      <div class="screenshot">
-        <Image src={breaksByField} alt="Breaks by Field Analysis" width={540} density={2} />
+<section class="product-screenshots">
+  <div class="wrap">
+    <div class="grid-two-up">
+      <div class="screenshot-wrapper">
+        <div class="screenshot">
+          <Image src={breaksByField} alt="Breaks by Field Analysis" width={540} density={2} />
+        </div>
       </div>
-    </div>
-    <div class="screenshot-wrapper">
-      <div class="screenshot">
-        <Image src={valuationTimeliness} alt="Valuation Timeliness Report" width={540} density={2} />
+      <div class="screenshot-wrapper">
+        <div class="screenshot">
+          <Image src={valuationTimeliness} alt="Valuation Timeliness Report" width={540} density={2} />
+        </div>
       </div>
     </div>
   </div>
@@ -21,7 +23,9 @@ import valuationTimeliness from '../assets/screenshots/valuation-timeliness.webp
 
 <style>
   .product-screenshots {
-    margin: 60px auto;
+    background: #ffffff;
+    padding: 40px 0;
+    margin: 0;
   }
 
   .grid-two-up {
@@ -36,12 +40,12 @@ import valuationTimeliness from '../assets/screenshots/valuation-timeliness.webp
   }
 
   .screenshot {
-    /* Styles inherited from global.css or redefined here if needed for specific overrides */
-    border-radius: 18px;
+    /* Styles inherited from global.css */
+    border-radius: 12px;
     overflow: hidden;
     border: 1px solid var(--rpBorder);
     background: white;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
     line-height: 0;
   }
 

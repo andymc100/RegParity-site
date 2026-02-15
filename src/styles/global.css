@@ -110,12 +110,11 @@ img { max-width: 100%; display: block; }
 
 /* Screenshot Framing */
 .screenshot {
-  border-radius: 18px;
+  border-radius: 12px;
   overflow: hidden;
   border: 1px solid var(--rpBorder);
   background: white;
-  /* Optional subtle shadow */
-  box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
 }
 
 /* Forms */
