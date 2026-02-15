@@ -8,8 +8,8 @@ import fieldModifications from '../assets/screenshots/field-modifications.webp';
 <BaseLayout title="Product | RegParity" description="RegParity aggregates breaks, surfaces actionable corrections, and preserves audit trails for EMIR and SFTR reconciliations.">
   <div class="wrap page-content">
     <div class="content-container">
-      <div class="screenshot lead-image">
-        <Image src={fieldModifications} alt="Field Modification Workflow" width={720} density={2} loading="eager" fetchpriority="high" />
+      <div class="screenshot-card lead-image">
+        <Image src={fieldModifications} alt="Field Modification Workflow" width={720} density={2} loading="eager" fetchpriority="high" class="screenshot-img" />
       </div>
 
       <section class="section">
@@ -113,18 +113,4 @@ import fieldModifications from '../assets/screenshots/field-modifications.webp';
     font-size: 0.95rem;
   }
 
-  /* Ensure screenshot styling is applied */
-  .screenshot {
-    border-radius: 18px;
-    overflow: hidden;
-    border: 1px solid var(--rpBorder);
-    background: white;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
-    line-height: 0;
-  }
-  .screenshot img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
 </style>

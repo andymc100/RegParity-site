@@ -40,8 +40,8 @@ import heroImage from '../assets/screenshots/hero-break-resolution.webp';
   </div>
 
   <div class="hero-image-container">
-    <div class="screenshot">
-      <Image src={heroImage} alt="RegParity Break Resolution Dashboard" width={800} density={2} />
+    <div class="screenshot-card">
+      <Image src={heroImage} alt="RegParity Break Resolution Dashboard" width={800} density={2} class="screenshot-img" />
     </div>
   </div>
 </section>
@@ -100,22 +100,10 @@ import heroImage from '../assets/screenshots/hero-break-resolution.webp';
     align-items: center;
   }
 
-  .screenshot {
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid var(--rpBorder);
-    background: white;
-    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
-    line-height: 0; /* Remove extra space below image */
-  }
-
   /* Ensure aspect ratio and max height */
-  .screenshot img {
-    width: 100%;
-    height: auto;
+  .screenshot-img {
     aspect-ratio: 16/10;
     object-fit: cover;
-    display: block;
   }
 
   @media (max-width: 900px) {
