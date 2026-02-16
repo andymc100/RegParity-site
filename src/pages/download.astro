@@ -29,7 +29,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </form>
 
       <p id="mailto-hint" hidden>
-        Your email draft should open in a new window. If it doesn’t, email us at <a href="mailto:contact@regparity.com">contact@regparity.com</a>.
+        Your email draft should open in a new window. If it doesn’t, email us at <a href="mailto:hello@regparity.com">hello@regparity.com</a>.
       </p>
 
       <p class="note">Note: If your IT team needs to download and scan the application first, we can send the link directly to them.</p>
@@ -38,78 +38,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <script>
-  function buildBody(form) {
-    const name = (form.querySelector('[name="name"]')?.value || '').trim();
-    const company = (form.querySelector('[name="company"]')?.value || '').trim();
-    const email = (form.querySelector('[name="email"]')?.value || '').trim();
-    const itEmail = (form.querySelector('[name="it_email"]')?.value || '').trim();
-    const message = (form.querySelector('[name="message"]')?.value || '').trim();
-
-    const bodyLines = [
-      'Request: RegParity download link',
-      '',
-      `Name: ${name || '(not provided)'}`,
-      `Company: ${company || '(not provided)'}`,
-      `Work email: ${email || '(not provided)'}`,
-      `IT contact email: ${itEmail || '(not provided)'}`,
-      '',
-      'Message:',
-      message || '(not provided)',
-      '',
-      `Sent from: ${window.location.origin}/download`,
-    ];
-    return bodyLines.join('\n');
-  }
-
-  function buildMailto(form) {
-    const company = (form.querySelector('[name="company"]')?.value || '').trim();
-    const subject = `RegParity download link request — ${company || 'Unknown company'}`;
-    const body = buildBody(form);
-    const to = 'contact@regparity.com';
-
-    return `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  }
+  import { setupMailtoForm } from '../lib/mailto.js';
 
   document.addEventListener('DOMContentLoaded', () => {
-    const form = document.querySelector('#request-download-form');
-    if (!form) return;
-
-    // Handle Form Submit (Mailto)
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      if (!form.reportValidity()) return;
-
-      const mailtoUrl = buildMailto(form);
-      window.location.href = mailtoUrl;
-
-      const hint = document.querySelector('#mailto-hint');
-      if (hint) hint.hidden = false;
-    });
-
-    // Handle Copy Details Button
-    const copyBtn = document.querySelector('#copy-details-btn');
-    if (copyBtn) {
-      const originalText = copyBtn.textContent;
-
-      copyBtn.addEventListener('click', async () => {
-        if (!form.reportValidity()) return;
-
-        const bodyText = buildBody(form);
-
-        try {
-          await navigator.clipboard.writeText(bodyText);
-
-          copyBtn.textContent = 'Copied';
-
-          setTimeout(() => {
-            copyBtn.textContent = originalText;
-          }, 2000);
-        } catch (err) {
-          console.error('Failed to copy: ', err);
-        }
-      });
-    }
+    setupMailtoForm(
+      'request-download-form',
+      'copy-details-btn',
+      'mailto-hint',
+      'RegParity download link request'
+    );
   });
 </script>
 
@@ -162,7 +99,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin-bottom: 0;
     font-size: 0.9rem;
     color: var(--rpTextMuted);
-    background: var(--rpBg); /* Optional: slight contrast or just keep transparent */
+    background: var(--rpBg);
     padding: 12px;
     border-radius: 8px;
     border: 1px solid var(--rpBorder);
