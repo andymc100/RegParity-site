@@ -7,8 +7,9 @@ import actionImage from '../assets/screenshots/action-field-modifications.webp';
   <div class="wrap container">
     <div class="grid-layout">
       <div class="content">
-        <h2>See corrective actions in context.</h2>
-        <p>Review discrepancies, restore original values where required, and apply precise corrective updates — with full traceability from reconciliation break to outbound file.</p>
+        <h2>Controlled, traceable corrective updates.</h2>
+        <p>Review discrepancies, restore original values where required, and apply precise corrective updates — with traceability from break to outbound file.</p>
+        <p class="anchor-line">Designed for EMIR and SFTR trade reporting teams.</p>
       </div>
       <div class="visual">
         <div class="screenshot-frame">
@@ -56,20 +57,28 @@ import actionImage from '../assets/screenshots/action-field-modifications.webp';
     margin: 0;
   }
 
+  .anchor-line {
+    font-size: 0.9rem;
+    margin-top: 16px;
+    color: var(--rpTextMuted);
+    opacity: 0.8;
+  }
+
   .screenshot-frame {
     background: white;
-    padding: 10px;
+    padding: 0;
     border: 1px solid var(--rpBorder);
     border-radius: 12px;
-    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.12);
-    transition: transform 0.3s ease;
+    box-shadow: 0 14px 44px rgba(0,0,0,0.10);
+    overflow: hidden;
   }
 
   .screenshot-img {
     display: block;
     width: 100%;
     height: auto;
-    border-radius: 8px;
+    transform: scale(1.06);
+    transform-origin: center;
   }
 
   @media (max-width: 900px) {
