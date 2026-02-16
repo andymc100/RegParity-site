@@ -4,17 +4,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout title="Download RegParity | Request Access">
   <div class="wrap page-content">
-    <div class="form-container">
+    <div class="form-container" id="request">
       <h1>Request RegParity</h1>
       <p>Share your work email and we’ll send an expiring download link, along with a short getting-started guide.</p>
 
-      <!-- TODO: Replace __FORM_ENDPOINT__ with Formspree/Getform endpoint -->
-      <form action="__FORM_ENDPOINT__" method="POST">
-        <label for="name">Name *</label>
-        <input type="text" id="name" name="name" required />
+      <div id="success-banner" class="success-banner" style="display: none;">
+        <strong>Request sent</strong> — we’ll be in touch shortly.
+      </div>
 
-        <label for="company">Company *</label>
-        <input type="text" id="company" name="company" required />
+      <form action="/api/request" method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" />
+
+        <label for="company">Company</label>
+        <input type="text" id="company" name="company" />
 
         <label for="email">Work Email *</label>
         <input type="email" id="email" name="email" required />
@@ -32,6 +35,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </div>
 </BaseLayout>
+
+<script>
+  // Check for 'sent=1' in query parameters to show success message
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('sent') === '1') {
+    const banner = document.getElementById('success-banner');
+    if (banner) {
+      banner.style.display = 'block';
+    }
+  }
+</script>
 
 <style>
   .page-content {
@@ -61,5 +75,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .full-width {
     width: 100%;
     margin-top: 16px;
+  }
+  .success-banner {
+    background: #F0FDF4; /* Light green background */
+    border: 1px solid var(--rpSuccess);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 24px;
+    color: var(--rpSuccess);
+    font-size: 0.95rem;
+  }
+  .success-banner strong {
+    font-weight: 600;
   }
 </style>

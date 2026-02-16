@@ -38,6 +38,13 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
+## Cloudflare Pages Environment Variables
+
+The following environment variables must be set in your Cloudflare Pages project settings:
+
+* `TO_EMAIL` = `andy@regparity.com` (or whichever inbox Andy chooses)
+* `FROM_EMAIL` = `noreply@regparity.com` (or other sender)
+
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
