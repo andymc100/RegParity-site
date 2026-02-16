@@ -115,7 +115,7 @@ img { max-width: 100%; display: block; }
   border: 1px solid var(--rpBorder);
   background: white;
   box-shadow: 0 12px 40px rgba(0,0,0,0.08);
-  padding: 24px;
+  padding: 16px;
 }
 
 .screenshot-img {
@@ -127,7 +127,7 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 720px) {
   .screenshot-card {
-    padding: 16px;
+    padding: 12px;
   }
 }
 

@@ -94,16 +94,14 @@ import heroImage from '../assets/screenshots/hero-break-resolution.webp';
 
   /* Image Container */
   .hero-image-container {
-    max-height: 560px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  /* Ensure aspect ratio and max height */
+  /* Screenshot Img - let global or default styles handle it (width: 100%, height: auto) */
   .screenshot-img {
-    aspect-ratio: 16/10;
-    object-fit: cover;
+    /* No forced aspect ratio */
   }
 
   @media (max-width: 900px) {
