@@ -6,17 +6,17 @@
     <div class="step">
       <div class="step-num">1</div>
       <h3>Load TR position files</h3>
-      <p>Ingest massive position files and reconciliation reports directly from your TR/repositories.</p>
+      <p>Import position and reconciliation reports directly from your trade repository.</p>
     </div>
     <div class="step">
       <div class="step-num">2</div>
       <h3>Review breaks & corrections</h3>
-      <p>RegParity surfaces the discrepancies and proposes the exact corrective actions needed.</p>
+      <p>Identify discrepancies and apply the exact corrective actions required.</p>
     </div>
     <div class="step">
       <div class="step-num">3</div>
       <h3>Export compliant updates</h3>
-      <p>Generate validation-ready outbound files with a complete, immutable audit trail attached.</p>
+      <p>Generate validation-ready outbound files with a complete audit trail.</p>
     </div>
   </div>
 </section>
@@ -24,13 +24,12 @@
 <style>
   .section-spacing {
     padding: 80px 22px;
-    border-bottom: 1px solid var(--line);
   }
   h2 {
     text-align: center;
     font-size: clamp(2rem, 3vw, 2.5rem);
     margin-bottom: 60px;
-    color: var(--text);
+    color: var(--rpText);
   }
   .steps-grid {
     display: grid;
@@ -48,19 +47,20 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    border: 1px solid var(--gold);
-    color: var(--gold);
+    border: 1px solid var(--rpBlue);
+    color: var(--rpBlue);
     font-weight: 700;
     margin-bottom: 24px;
-    background: rgba(220,190,109,0.05);
+    background: var(--rpBlue100);
   }
   .step h3 {
     margin: 0 0 12px;
     font-size: 1.25rem;
-    color: var(--text);
+    font-weight: 700;
+    color: var(--rpText);
   }
   .step p {
-    color: var(--text-dim);
+    color: var(--rpText);
     line-height: 1.6;
     margin: 0;
   }
@@ -73,7 +73,7 @@
     left: 50px;
     right: -10px;
     height: 1px;
-    background: var(--line);
+    background: var(--rpBorder);
   }
 
   @media (max-width: 768px) {
