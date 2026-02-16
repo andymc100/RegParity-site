@@ -8,8 +8,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h1>Request RegParity</h1>
       <p>Share your work email and we’ll send an expiring download link, along with a short getting-started guide.</p>
 
-      <!-- TODO: Replace __FORM_ENDPOINT__ with Formspree/Getform endpoint -->
-      <form action="__FORM_ENDPOINT__" method="POST">
+      <form id="request-download-form">
         <label for="name">Name *</label>
         <input type="text" id="name" name="name" required />
 
@@ -26,12 +25,93 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <textarea id="message" name="message" rows="4"></textarea>
 
         <button type="submit" class="btn primary full-width">Request download link</button>
+        <button type="button" id="copy-details-btn" class="btn secondary full-width">Copy request details</button>
       </form>
+
+      <p id="mailto-hint" hidden>
+        Your email draft should open in a new window. If it doesn’t, email us at <a href="mailto:contact@regparity.com">contact@regparity.com</a>.
+      </p>
 
       <p class="note">Note: If your IT team needs to download and scan the application first, we can send the link directly to them.</p>
     </div>
   </div>
 </BaseLayout>
+
+<script>
+  function buildBody(form) {
+    const name = (form.querySelector('[name="name"]')?.value || '').trim();
+    const company = (form.querySelector('[name="company"]')?.value || '').trim();
+    const email = (form.querySelector('[name="email"]')?.value || '').trim();
+    const itEmail = (form.querySelector('[name="it_email"]')?.value || '').trim();
+    const message = (form.querySelector('[name="message"]')?.value || '').trim();
+
+    const bodyLines = [
+      'Request: RegParity download link',
+      '',
+      `Name: ${name || '(not provided)'}`,
+      `Company: ${company || '(not provided)'}`,
+      `Work email: ${email || '(not provided)'}`,
+      `IT contact email: ${itEmail || '(not provided)'}`,
+      '',
+      'Message:',
+      message || '(not provided)',
+      '',
+      `Sent from: ${window.location.origin}/download`,
+    ];
+    return bodyLines.join('\n');
+  }
+
+  function buildMailto(form) {
+    const company = (form.querySelector('[name="company"]')?.value || '').trim();
+    const subject = `RegParity download link request — ${company || 'Unknown company'}`;
+    const body = buildBody(form);
+    const to = 'contact@regparity.com';
+
+    return `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('#request-download-form');
+    if (!form) return;
+
+    // Handle Form Submit (Mailto)
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      if (!form.reportValidity()) return;
+
+      const mailtoUrl = buildMailto(form);
+      window.location.href = mailtoUrl;
+
+      const hint = document.querySelector('#mailto-hint');
+      if (hint) hint.hidden = false;
+    });
+
+    // Handle Copy Details Button
+    const copyBtn = document.querySelector('#copy-details-btn');
+    if (copyBtn) {
+      const originalText = copyBtn.textContent;
+
+      copyBtn.addEventListener('click', async () => {
+        if (!form.reportValidity()) return;
+
+        const bodyText = buildBody(form);
+
+        try {
+          await navigator.clipboard.writeText(bodyText);
+
+          copyBtn.textContent = 'Copied';
+
+          setTimeout(() => {
+            copyBtn.textContent = originalText;
+          }, 2000);
+        } catch (err) {
+          console.error('Failed to copy: ', err);
+        }
+      });
+    }
+  });
+</script>
 
 <style>
   .page-content {
@@ -61,5 +141,34 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .full-width {
     width: 100%;
     margin-top: 16px;
+  }
+
+  /* Button Styles */
+  .btn.secondary {
+    margin-top: 12px;
+    border: 1px solid var(--rpBorder);
+    color: var(--rpTextMuted);
+    background: transparent;
+  }
+  .btn.secondary:hover {
+    background: rgba(0,0,0,0.03);
+    color: var(--rpText);
+    border-color: var(--rpTextMuted);
+  }
+
+  /* Hint Message */
+  #mailto-hint {
+    margin-top: 24px;
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: var(--rpTextMuted);
+    background: var(--rpBg); /* Optional: slight contrast or just keep transparent */
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--rpBorder);
+  }
+  #mailto-hint a {
+    color: var(--rpBlue);
+    font-weight: 500;
   }
 </style>
