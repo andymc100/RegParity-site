@@ -6,49 +6,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <div class="wrap page-content">
     <div class="form-container">
       <h1>Request RegParity</h1>
-      <p>Share your work email and we’ll send an expiring download link, along with a short getting-started guide.</p>
+      <p>Email us and we’ll send an expiring download link, a short getting-started guide, and can also book a short session to guide you through.</p>
 
-      <form id="request-download-form">
-        <label for="name">Name *</label>
-        <input type="text" id="name" name="name" required />
+      <a href="mailto:hello@regparity.com?subject=RegParity%20download%20request" class="btn primary full-width">Email hello@regparity.com</a>
 
-        <label for="company">Company *</label>
-        <input type="text" id="company" name="company" required />
+      <div class="secondary-info">
+        <p>Please include your name, company and preferred contact email.</p>
+        <p>If your IT team needs to review the application first, feel free to copy them in.</p>
+      </div>
 
-        <label for="email">Work Email *</label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="it-email">IT Contact Email (optional)</label>
-        <input type="email" id="it-email" name="it_email" />
-
-        <label for="message">Message (optional)</label>
-        <textarea id="message" name="message" rows="4"></textarea>
-
-        <button type="submit" class="btn primary full-width">Request download link</button>
-        <button type="button" id="copy-details-btn" class="btn secondary full-width">Copy request details</button>
-      </form>
-
-      <p id="mailto-hint" hidden>
-        Your email draft should open in a new window. If it doesn’t, email us at <a href="mailto:hello@regparity.com">hello@regparity.com</a>.
+      <p class="plain-link">
+        <a href="mailto:hello@regparity.com">hello@regparity.com</a>
       </p>
-
-      <p class="note">Note: If your IT team needs to download and scan the application first, we can send the link directly to them.</p>
     </div>
   </div>
 </BaseLayout>
-
-<script>
-  import { setupMailtoForm } from '../lib/mailto.js';
-
-  document.addEventListener('DOMContentLoaded', () => {
-    setupMailtoForm(
-      'request-download-form',
-      'copy-details-btn',
-      'mailto-hint',
-      'RegParity download link request'
-    );
-  });
-</script>
 
 <style>
   .page-content {
@@ -70,42 +42,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin-bottom: 32px;
     line-height: 1.6;
   }
-  .note {
-    font-size: 0.85rem;
-    margin-top: 24px;
-    opacity: 0.7;
-  }
   .full-width {
     width: 100%;
-    margin-top: 16px;
+    margin-bottom: 32px;
+    text-align: center;
   }
 
-  /* Button Styles */
-  .btn.secondary {
-    margin-top: 12px;
-    border: 1px solid var(--rpBorder);
+  .secondary-info p {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
     color: var(--rpTextMuted);
-    background: transparent;
-  }
-  .btn.secondary:hover {
-    background: rgba(0,0,0,0.03);
-    color: var(--rpText);
-    border-color: var(--rpTextMuted);
+    opacity: 0.8;
   }
 
-  /* Hint Message */
-  #mailto-hint {
+  .plain-link {
     margin-top: 24px;
-    margin-bottom: 0;
     font-size: 0.9rem;
     color: var(--rpTextMuted);
-    background: var(--rpBg);
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid var(--rpBorder);
+    text-align: center;
   }
-  #mailto-hint a {
-    color: var(--rpBlue);
-    font-weight: 500;
+  .plain-link a {
+    color: var(--rpTextMuted);
+    text-decoration: underline;
+  }
+  .plain-link a:hover {
+    color: var(--rpText);
   }
 </style>
