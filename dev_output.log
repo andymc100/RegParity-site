@@ -17,3 +17,5 @@
 11:25:38 [200] /contact 9ms
 11:31:42 [watch] /src/pages/download.astro?astro&type=style&index=0&lang.css
 11:32:12 [200] /download 40ms
+11:35:06 [watch] /src/pages/contact.astro?astro&type=style&index=0&lang.css
+11:35:44 [200] /contact 26ms
