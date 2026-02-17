@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
-import breaksByField from '../assets/screenshots/breaks-by-field.webp';
-import valuationTimeliness from '../assets/screenshots/valuation-timeliness.webp';
+import breaksByField from '../assets/screenshots/breaks-by-field-clean.webp';
+import valuationTimeliness from '../assets/screenshots/valuation-timeliness-clean.webp';
 ---
 
 <section class="product-screenshots">
@@ -9,12 +9,16 @@ import valuationTimeliness from '../assets/screenshots/valuation-timeliness.webp
     <div class="grid-two-up">
       <div class="screenshot-wrapper">
         <div class="screenshot-card">
-          <Image src={breaksByField} alt="Breaks by Field Analysis" width={540} class="screenshot-img" />
+          <div class="screenshot-frame">
+            <Image src={breaksByField} alt="Breaks by Field Analysis" width={540} class="screenshot-img" />
+          </div>
         </div>
       </div>
       <div class="screenshot-wrapper">
         <div class="screenshot-card">
-          <Image src={valuationTimeliness} alt="Valuation Timeliness Report" width={540} class="screenshot-img" />
+          <div class="screenshot-frame">
+            <Image src={valuationTimeliness} alt="Valuation Timeliness Report" width={540} class="screenshot-img" />
+          </div>
         </div>
       </div>
     </div>

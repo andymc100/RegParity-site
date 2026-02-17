@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import actionImage from '../assets/screenshots/action-field-modifications.webp';
+import actionImage from '../assets/screenshots/action-field-modifications-clean.webp';
 ---
 
 <section class="corrective-action">
@@ -12,7 +12,9 @@ import actionImage from '../assets/screenshots/action-field-modifications.webp';
       </div>
       <div class="visual">
         <div class="action-shot">
-          <Image src={actionImage} alt="Corrective Action Interface" width={900} class="action-shot-img" />
+          <div class="screenshot-frame">
+            <Image src={actionImage} alt="Corrective Action Interface" width={900} class="screenshot-img" />
+          </div>
         </div>
       </div>
     </div>
@@ -58,17 +60,11 @@ import actionImage from '../assets/screenshots/action-field-modifications.webp';
 
   .action-shot {
     background: white;
-    padding: 0;
+    padding: 16px;
     border: 1px solid var(--rpBorder);
     border-radius: 12px;
     box-shadow: 0 14px 44px rgba(0,0,0,0.10);
     overflow: hidden;
-  }
-
-  .action-shot-img {
-    display: block;
-    width: 100%;
-    height: auto;
   }
 
   @media (max-width: 900px) {
@@ -86,6 +82,12 @@ import actionImage from '../assets/screenshots/action-field-modifications.webp';
       padding-right: 0;
       max-width: 600px;
       margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .action-shot {
+      padding: 12px;
     }
   }
 </style>
