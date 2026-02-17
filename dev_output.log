@@ -15,3 +15,5 @@
 11:24:53 watching for file changes...
 11:25:37 [200] /download 30ms
 11:25:38 [200] /contact 9ms
+11:31:42 [watch] /src/pages/download.astro?astro&type=style&index=0&lang.css
+11:32:12 [200] /download 40ms
