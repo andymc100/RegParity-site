@@ -5,26 +5,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <BaseLayout title="Contact RegParity">
   <div class="wrap page-content">
     <div class="form-container">
-      <h1>Contact Us</h1>
-      <p class="subtitle">We respond within one business day.</p>
+      <h1>Get in touch</h1>
+      <p>For product questions, licensing, or a short walkthrough, email us.</p>
 
-      <p class="direct-email">
-        Direct email: <a href="mailto:hello@regparity.com">hello@regparity.com</a>
-      </p>
+      <a href="mailto:hello@regparity.com?subject=RegParity%20enquiry" class="btn primary full-width">Email hello@regparity.com</a>
 
-      <!-- TODO: Replace __FORM_ENDPOINT__ with Formspree/Getform endpoint -->
-      <form action="__FORM_ENDPOINT__" method="POST">
-        <label for="name">Name *</label>
-        <input type="text" id="name" name="name" required />
-
-        <label for="email">Work Email *</label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="message">Message *</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-
-        <button type="submit" class="btn primary full-width">Send Message</button>
-      </form>
+      <p class="footer-note">We typically respond within one business day.</p>
     </div>
   </div>
 </BaseLayout>
@@ -42,27 +28,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   h1 {
     font-size: 2.5rem;
     margin-bottom: 16px;
-    color: var(--text);
+    color: var(--rpText);
   }
-  .subtitle {
-    color: var(--text-dim);
-    margin-bottom: 8px;
-  }
-  .direct-email {
+  p {
+    color: var(--rpTextMuted);
     margin-bottom: 32px;
-    color: var(--text);
-    font-weight: 500;
-  }
-  .direct-email a {
-    color: var(--gold);
-    text-decoration: underline;
-    text-decoration-color: rgba(220,190,109,0.3);
-  }
-  .direct-email a:hover {
-    text-decoration-color: var(--gold);
+    line-height: 1.6;
   }
   .full-width {
     width: 100%;
-    margin-top: 16px;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+  .footer-note {
+    font-size: 0.9rem;
+    color: var(--rpTextMuted);
+    opacity: 0.8;
+    margin-top: 32px;
+    text-align: center;
   }
 </style>

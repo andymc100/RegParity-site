@@ -1,0 +1,47 @@
+---
+import { Image } from 'astro:assets';
+import breaksByField from '../assets/screenshots/breaks-by-field.webp';
+import valuationTimeliness from '../assets/screenshots/valuation-timeliness.webp';
+---
+
+<section class="product-screenshots">
+  <div class="wrap">
+    <div class="grid-two-up">
+      <div class="screenshot-wrapper">
+        <div class="screenshot-card">
+          <Image src={breaksByField} alt="Breaks by Field Analysis" width={540} class="screenshot-img" />
+        </div>
+      </div>
+      <div class="screenshot-wrapper">
+        <div class="screenshot-card">
+          <Image src={valuationTimeliness} alt="Valuation Timeliness Report" width={540} class="screenshot-img" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .product-screenshots {
+    background: #ffffff;
+    padding: 40px 0;
+    margin: 0;
+  }
+
+  .grid-two-up {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .screenshot-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (max-width: 768px) {
+    .grid-two-up {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

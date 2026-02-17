@@ -1,11 +1,17 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CTASection from '../components/CTASection.astro';
+import fieldModifications from '../assets/screenshots/field-modifications.webp';
 ---
 
 <BaseLayout title="Product | RegParity" description="RegParity aggregates breaks, surfaces actionable corrections, and preserves audit trails for EMIR and SFTR reconciliations.">
   <div class="wrap page-content">
     <div class="content-container">
+      <div class="screenshot-card lead-image">
+        <Image src={fieldModifications} alt="Field Modification Workflow" width={720} loading="eager" fetchpriority="high" class="screenshot-img" />
+      </div>
+
       <section class="section">
         <span class="kicker">The Problem</span>
         <h1>Reconciliation highlights discrepancies. Correcting them is manual, slow, and opaque.</h1>
@@ -53,12 +59,15 @@ import CTASection from '../components/CTASection.astro';
     max-width: 720px;
     width: 100%;
   }
+  .lead-image {
+    margin-bottom: 60px;
+  }
   .section {
     margin-bottom: 80px;
   }
   .kicker {
     display: block;
-    color: var(--gold);
+    color: var(--rpBlue);
     text-transform: uppercase;
     font-size: 0.85rem;
     font-weight: 700;
@@ -69,16 +78,16 @@ import CTASection from '../components/CTASection.astro';
     font-size: clamp(2rem, 3vw, 2.75rem);
     line-height: 1.2;
     margin: 0;
-    color: var(--text);
+    color: var(--rpText);
   }
   h2 {
     font-size: 2rem;
     margin-bottom: 24px;
-    color: var(--text);
+    color: var(--rpText);
   }
   ul {
     padding-left: 20px;
-    color: var(--text-dim);
+    color: var(--rpText);
     font-size: 1.1rem;
     line-height: 1.6;
   }
@@ -92,10 +101,10 @@ import CTASection from '../components/CTASection.astro';
   .deployment-list li {
     margin-bottom: 24px;
     padding-left: 16px;
-    border-left: 2px solid var(--line);
+    border-left: 2px solid var(--rpBorder);
   }
   .deployment-list strong {
-    color: var(--text);
+    color: var(--rpText);
     display: block;
     margin-bottom: 4px;
   }
@@ -103,4 +112,5 @@ import CTASection from '../components/CTASection.astro';
     margin: 0;
     font-size: 0.95rem;
   }
+
 </style>
