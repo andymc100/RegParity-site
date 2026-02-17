@@ -121,7 +121,6 @@ img { max-width: 100%; display: block; }
   border-radius: 0;
   overflow: hidden;
   background: #fff;
-  border: 1px solid var(--rpBorder);
 }
 
 .screenshot-img {
