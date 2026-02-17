@@ -118,7 +118,7 @@ img { max-width: 100%; display: block; }
 }
 
 .screenshot-frame {
-  border-radius: 12px;
+  border-radius: 0;
   overflow: hidden;
   background: #fff;
   border: 1px solid var(--rpBorder);
