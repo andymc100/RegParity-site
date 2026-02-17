@@ -5,49 +5,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <BaseLayout title="Contact RegParity">
   <div class="wrap page-content">
     <div class="form-container">
-      <h1>Contact Us</h1>
-      <p class="subtitle">We respond within one business day.</p>
+      <h1>Get in touch</h1>
+      <p>For product questions, licensing, or a short walkthrough, email us directly.</p>
 
-      <p class="direct-email">
-        Direct email: <a href="mailto:hello@regparity.com">hello@regparity.com</a>
-      </p>
+      <a href="mailto:hello@regparity.com?subject=RegParity%20enquiry" class="btn primary full-width">Email hello@regparity.com</a>
 
-      <form id="contact-form">
-        <label for="name">Name (optional)</label>
-        <input type="text" id="name" name="name" />
-
-        <label for="company">Company (optional)</label>
-        <input type="text" id="company" name="company" />
-
-        <label for="email">Work Email *</label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="message">Message *</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-
-        <button type="submit" class="btn primary full-width">Send Message</button>
-        <button type="button" id="copy-details-btn" class="btn secondary full-width">Copy enquiry details</button>
-      </form>
-
-      <p id="mailto-hint" hidden>
-        Your email draft should open in a new window. If it doesn’t, email us at <a href="mailto:hello@regparity.com">hello@regparity.com</a>.
-      </p>
+      <p class="footer-note">We typically respond within one business day.</p>
     </div>
   </div>
 </BaseLayout>
-
-<script>
-  import { setupMailtoForm } from '../lib/mailto.js';
-
-  document.addEventListener('DOMContentLoaded', () => {
-    setupMailtoForm(
-      'contact-form',
-      'copy-details-btn',
-      'mailto-hint',
-      'RegParity contact request'
-    );
-  });
-</script>
 
 <style>
   .page-content {
@@ -64,54 +30,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin-bottom: 16px;
     color: var(--rpText);
   }
-  .subtitle {
+  p {
     color: var(--rpTextMuted);
-    margin-bottom: 8px;
-  }
-  .direct-email {
     margin-bottom: 32px;
-    color: var(--rpText);
-    font-weight: 500;
-  }
-  .direct-email a {
-    color: var(--rpBlue);
-    text-decoration: underline;
-    text-decoration-color: var(--rpBlue100);
-  }
-  .direct-email a:hover {
-    text-decoration-color: var(--rpBlue);
+    line-height: 1.6;
   }
   .full-width {
     width: 100%;
-    margin-top: 16px;
+    margin-bottom: 32px;
+    text-align: center;
   }
-
-  /* Button Styles */
-  .btn.secondary {
-    margin-top: 12px;
-    border: 1px solid var(--rpBorder);
-    color: var(--rpTextMuted);
-    background: transparent;
-  }
-  .btn.secondary:hover {
-    background: rgba(0,0,0,0.03);
-    color: var(--rpText);
-    border-color: var(--rpTextMuted);
-  }
-
-  /* Hint Message */
-  #mailto-hint {
-    margin-top: 24px;
-    margin-bottom: 0;
+  .footer-note {
     font-size: 0.9rem;
     color: var(--rpTextMuted);
-    background: var(--rpBg);
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid var(--rpBorder);
-  }
-  #mailto-hint a {
-    color: var(--rpBlue);
-    font-weight: 500;
+    opacity: 0.8;
+    margin-top: 32px;
+    text-align: center;
   }
 </style>
