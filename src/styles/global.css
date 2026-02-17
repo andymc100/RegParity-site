@@ -111,18 +111,24 @@ img { max-width: 100%; display: block; }
 /* Screenshot Framing */
 .screenshot-card {
   border-radius: 14px;
-  overflow: hidden;
   border: 1px solid var(--rpBorder);
   background: white;
   box-shadow: 0 12px 40px rgba(0,0,0,0.08);
   padding: 16px;
 }
 
+.screenshot-frame {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--rpBorder);
+}
+
 .screenshot-img {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 0;
 }
 
 @media (max-width: 720px) {
